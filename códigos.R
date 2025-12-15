@@ -7,14 +7,17 @@ library(tidyverse)
 #Abrindo o banco de dados
 
 dados <- read_pns(
+  microdata = "C:/Users/user/Documents/trabalho_met2/Trabalho_metest_2_smks/PNS_2019.txt", 
+  input_txt = "C:/Users/user/Documents/trabalho_met2/Trabalho_metest_2_smks/input_PNS_2019.txt")
+
+dados <- read_pns(
   microdata = "C:/estatística/Trabalho de MET2/PNS_2019.txt", 
   input_txt = "C:/estatística/Trabalho de MET2/input_PNS_2019.txt")
 
 #Filtrando as exigencias do professor
 
-dados1 <- dados%>%
+dados1 <- dados %>%
   filter(V0001 == 53, V0031 == 1, V0025A == 1, C008 >= 18, V0015 == "01")
-dados1$V0015 == "01"
 
 #Selecionando a amostra
 
